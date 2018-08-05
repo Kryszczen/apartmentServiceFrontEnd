@@ -1,0 +1,144 @@
+<div class="container-fluid">
+  <p class="intro">Wybierz co Cię interesuje:</p>
+  <div class="row">
+    <div class="col-lg-4" style="background-color:whitesmoke;">
+      <div class="form-group">
+        <label for="typeOfProperty">Rodzaj nieruchomości</label>
+        <select class="form-control" id="typeOfProperty">
+          <option value="propertyEmpty"></option>
+          <option value="HOUSE">dom</option>
+          <option value="APARTMENT">mieszkanie</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-lg-4" style="background-color:whitesmoke;">
+      <div class="form-group">
+        <label for="voivodeship">Województwo</label>
+        <select class="form-control" id="voivodeship">
+          <option value="voivodeshipEmpty"></option>
+          <option value="lubuskie">lubuskie</option>
+          <option value="lodzkie">łódzkie</option>
+          <option value="malopolskie">małopolskie</option>
+          <option value="mazowieckie">mazowieckie</option>
+          <option value="opolskie">opolskie</option>
+          <option value="podkarpackie">podkarpackie</option>
+          <option value="podlaskie">podlaskie</option>
+          <option value="pomorskie">pomorskie</option>
+          <option value="slaskie">śląskie</option>
+          <option value="swietokrzyskie">świętokrzyskie</option>
+          <option value="warminsko-mazurskie">warmińsko-mazurskie</option>
+          <option value="wielkopolskie">wielkopolskie</option>
+          <option value="zachodniopomorskie">zachodniopomorskie</option>
+          <option value="dolnoslaskie">dolnośląskie</option>
+          <option value="lubelskie">lubelskie</option>
+          <option value="kujawsko-pomorskie">kujawsko-pomorskie</option>
+          </select>
+      </div>
+    </div>
+    <div class="col-lg-4" style="background-color:whitesmoke;">
+      <div class="form-group">
+        <label for="city">Miejscowość</label>
+        <input type="text" class="form-control" id="city">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4" style="background-color:whitesmoke;">
+      <div class="form-group">
+        <label for="roomQuantity">Ilość pokoi</label>
+        <select class="form-control" id="roomQuantity">
+          <option></option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-lg-4" style="background-color:whitesmoke;">
+      <div class="form-group">
+        <label for="squareMeters">Metraż</label>
+        <div class="row">
+          <input type="text" class="col-lg-5 form-control" style="align-content: center" id="squareMeters" value="od">
+          <div class="col-lg-2"></div>
+          <input type="text" class="col-lg-5 form-control" style="align-content: center" id="squareMeters" value="do">
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4" style="background-color:whitesmoke;">
+      <div class="form-group">
+        <label for="seller">Sprzedawca</label>
+        <select class="form-control" id="seller">
+          <option value="Empty"></option>
+          <option value="AGENCY">agencja</option>
+          <option value="OWNER">właściciel</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4" style="background-color:white;">
+    </div>
+    <div class="col-lg-4 text-center" style="background-color:whitesmoke;">
+      <div class="form-group">
+        <label for="price">Cena</label>
+        <input type="text" class="form-control" id="price">
+      </div>
+    </div>
+    <div class="col-lg-4" style="background-color:white;">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4" style="background-color:white;">
+    </div>
+    <div class="col-lg-4 text-center text-middle">
+      <button type="button" class="btn btn-secondary ">Wyszukaj</button>
+    </div>
+  </div>
+  <div class="col-lg-4" style="background-color:white;"></div>
+</div>
+
+<div class="container-fluid">
+    <h2>Znalezione nieruchomości(kliknij dwa razy aby wyświetlić więcej informacji</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nazwa</th>
+            <th scope="col">Data zamieszczenia</th>
+            <th scope="col">Cena</th>
+            <th scope="col">Ilośc pokoi</th>
+            <th scope="col">Metraż</th>
+            <th scope="col">Województwo</th>
+            <th scope="col">Miejscowość</th>
+            <th scope="col">Rodzaj nieruchomości</th>
+            <th scope="col">Sprzedawca</th>  
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let apartment of apartments" [class.selected]="apartment === selectedApartment" (click)="onSelect(apartment)">
+          <td>{{apartment.id}}</td>
+          <td>{{apartment.name}}</td>
+          <td>{{apartment.dateOfPOstage}}</td>
+          <td>{{apartment.price}}</td>
+          <td>{{apartment.roomQuantity}}</td>
+          <td>{{apartment.metersSquare}}</td>
+          <td>{{apartment.voivodeship}}</td>
+          <td>{{apartment.city}}</td>
+          <td>{{apartment.typeOfProperty}}</td>
+          <td>{{apartment.seller}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+
+<div class="footer">
+  {{apartment.name}}
+</div>

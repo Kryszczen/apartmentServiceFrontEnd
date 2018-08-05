@@ -1,0 +1,46 @@
+<h2>result page</h2>
+<div class="container-fluid">
+    <h2>Znalezione nieruchomości(kliknij dwa razy aby wyświetlić więcej informacji</h2>
+    <table class="table table-stripped">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+            <th scope="col">Nazwa</th>
+            <th scope="col">Data zamieszczenia</th>
+            <th scope="col">Cena</th>
+            <th scope="col">Ilośc pokoi</th>
+            <th scope="col">Metraż</th>
+            <th scope="col">Województwo</th>
+            <th scope="col">Miejscowość</th>
+            <th scope="col">Rodzaj nieruchomości</th>
+            <th scope="col">Sprzedawca</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let apartment of apartments" [class.selected]="apartment === selectedApartment"
+        (click)="onSelect(apartment)">
+          <td>{{apartment.id}}</td>
+          <td>{{apartment.name}}</td>
+          <td>{{apartment.dateOfPOstage}}</td>
+          <td>{{apartment.price}}</td>
+          <td>{{apartment.roomQuantity}}</td>
+          <td>{{apartment.metersSquare}}</td>
+          <td>{{apartment.voivodeship}}</td>
+          <td>{{apartment.city}}</td>
+          <td>{{apartment.typeOfProperty}}</td>
+          <td>{{apartment.seller}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+<div *ngIf="selectedApartment">
+  <h2>{{selectedApartment.name | uppercase}}
+    Details</h2>
+    <div>
+      <label>name:
+        <input[(ngModel)]="selectedApartment.name" placeholder="name">
+      </label>
+    </div>
+</div>
