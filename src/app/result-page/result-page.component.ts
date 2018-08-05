@@ -10,7 +10,6 @@ import { APARTMENTS } from '../mock-apartments';
   styleUrls: ['./result-page.component.css']
 })
 export class ResultPageComponent implements OnInit {
-  @Input() apartment: Apartment;
   apartments = APARTMENTS;
 
   selectedApartment: Apartment;

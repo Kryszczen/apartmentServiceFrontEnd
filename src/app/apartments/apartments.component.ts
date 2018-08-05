@@ -8,12 +8,18 @@ import { APARTMENTS } from '../mock-apartments';
 })
 export class ApartmentsComponent implements OnInit {
   
-  apartments = APARTMENTS;
+  // apartments = APARTMENTS;
+
+  // selectedApartment: Apartment;
+
   
   constructor() { }
 
   ngOnInit() {
+  }
 
+  onSelect(apartment: Apartment): void {
+    // this.selectedApartment = apartment;
   }
 
 }
