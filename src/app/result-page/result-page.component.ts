@@ -10,9 +10,9 @@ import { APARTMENTS } from '../mock-apartments';
   styleUrls: ['./result-page.component.css']
 })
 export class ResultPageComponent implements OnInit {
-  apartments = APARTMENTS;
+  // apartments = APARTMENTS;
 
-  selectedApartment: Apartment;
+  // selectedApartment: Apartment;
 
   constructor() { }
 

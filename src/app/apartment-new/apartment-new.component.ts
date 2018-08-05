@@ -25,7 +25,9 @@ export class ApartmentNewComponent implements OnInit {
   }
 
   getApartments(): void{
-    this.apartmentService.getApartments()  .subscribe(apartments => this.apartments = apartments);
-  }
+    this.apartmentService.getApartments().subscribe(apartments => {
+      this.apartments = apartments;
+    }
+    )}
 
 }
